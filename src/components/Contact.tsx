@@ -18,7 +18,7 @@ export function Contact() {
         {/* Header */}
         <Reveal className="rule block w-full bg-[#080808]/10" variant="scale" />
         <Reveal delay={60} className="mt-6 flex items-center gap-3">
-          <span className="type-meta font-semibold text-[#FF3D0A]">05</span>
+          <span className="type-meta font-semibold text-[#FF3D0A]">04</span>
           <span className="h-2.5 w-px bg-[#080808]/20" aria-hidden="true" />
           <span className="type-meta text-[#5A5852]">Contact</span>
           <span className="ml-auto flex items-center gap-2">

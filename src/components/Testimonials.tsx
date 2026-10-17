@@ -44,7 +44,7 @@ export function Testimonials() {
     >
       <div className="shell">
         <SectionHeading
-          index="04"
+          index="03"
           eyebrow="Testimonials"
           title={
             <>
@@ -68,7 +68,7 @@ export function Testimonials() {
               <figure
                 key={`${item.author}-${i}`}
                 data-card
-                className="group relative flex min-w-[86%] shrink-0 snap-start flex-col justify-between rounded-2xl md:rounded-3xl border border-[#080808]/08 bg-white p-7 shadow-xs transition-[border-color,box-shadow] duration-300 hover:border-[#080808]/20 hover:shadow-md sm:min-w-[54%] lg:min-w-0 lg:flex-1 lg:p-8"
+                className="group relative flex w-[86vw] max-w-[86vw] min-w-0 shrink-0 snap-start flex-col justify-between rounded-2xl md:rounded-3xl border border-[#080808]/08 bg-white p-6 sm:p-7 shadow-xs transition-[border-color,box-shadow] duration-300 hover:border-[#080808]/20 hover:shadow-md sm:w-[54vw] sm:max-w-none lg:w-auto lg:min-w-0 lg:flex-1 lg:p-8"
               >
                 {/* Oversized editorial quote mark */}
                 <span
@@ -78,12 +78,12 @@ export function Testimonials() {
                   &rdquo;
                 </span>
 
-                <blockquote className="relative">
+                <blockquote className="relative min-w-0 w-full overflow-hidden">
                   <span
                     aria-hidden="true"
                     className="absolute -left-0 top-1 block h-[calc(100%-0.5rem)] w-0.5 bg-[#080808]/15 transition-colors duration-300 group-hover:bg-[#FF3D0A]"
                   />
-                  <p className="pl-5 text-[1.0625rem] leading-[1.65] font-normal text-[#080808] md:text-[1.125rem]">
+                  <p className="pl-4 sm:pl-5 text-[0.9375rem] leading-[1.65] font-normal text-[#080808] sm:text-[1.0625rem] break-words whitespace-normal">
                     {item.quote}
                   </p>
                 </blockquote>

@@ -113,6 +113,7 @@ export type VideoProject = {
   year: string;
   thumbnail: string;
   videoUrl: string;
+  aspect?: "vertical" | "landscape";
 };
 
 export const videos: VideoProject[] = [
@@ -126,6 +127,7 @@ export const videos: VideoProject[] = [
     year: "2026",
     thumbnail: images.project01, // REPLACE IMAGE URL HERE
     videoUrl: "https://drive.google.com/file/d/191xk6PPQdCJzi9cQxxUiszzq_Zh_e9Fn/preview", // REPLACE VIDEO URL HERE
+    aspect: "vertical",
   },
   {
     id: "02",
@@ -137,6 +139,7 @@ export const videos: VideoProject[] = [
     year: "2026",
     thumbnail: images.project02, // REPLACE IMAGE URL HERE
     videoUrl: "https://www.youtube.com/embed/Rdo8t3CA4F0", // REPLACE VIDEO URL HERE
+    aspect: "landscape",
   },
   {
     id: "03",
@@ -148,6 +151,7 @@ export const videos: VideoProject[] = [
     year: "2026",
     thumbnail: images.project03, // REPLACE IMAGE URL HERE
     videoUrl: "https://www.youtube.com/embed/wIz5i_Md8uM", // REPLACE VIDEO URL HERE
+    aspect: "vertical",
   },
   {
     id: "04",
@@ -159,6 +163,7 @@ export const videos: VideoProject[] = [
     year: "2026",
     thumbnail: images.project04, // REPLACE IMAGE URL HERE
     videoUrl: "https://drive.google.com/file/d/1TbOi_FzxtQuhlHHtc_buuWWpwCT2fxoH/preview", // REPLACE VIDEO URL HERE
+    aspect: "vertical",
   },
   /* Placeholders 05 & 06 saved here to add back anytime on request:
   {
