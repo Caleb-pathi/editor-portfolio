@@ -42,7 +42,7 @@ export function VideoModal({ project, onClose }: VideoModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[90] flex items-center justify-center p-0 sm:p-6 md:p-10"
+      className="fixed inset-0 z-[90] flex items-center justify-center p-3 sm:p-6 md:p-10"
       role="dialog"
       aria-modal="true"
       aria-label={`${project.title} — video player`}
@@ -56,7 +56,7 @@ export function VideoModal({ project, onClose }: VideoModalProps) {
         className="modal-overlay absolute inset-0 cursor-default bg-[#080808]/80 backdrop-blur-md"
       />
 
-      <div className="modal-panel relative flex h-full w-full max-w-5xl flex-col sm:h-auto sm:w-[92vw]">
+      <div className="modal-panel relative flex w-full max-w-5xl flex-col my-auto max-h-[96vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-end justify-between gap-4 pb-4">
           <div className="min-w-0">

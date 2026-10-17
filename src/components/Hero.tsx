@@ -67,11 +67,11 @@ export function Hero() {
             </p>
 
             {/* CTAs matching reference: bold orange-red pill + clean secondary */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="#work"
                 onClick={(e) => onAnchor(e, "#work")}
-                className="btn btn-acid"
+                className="btn btn-acid text-center justify-center"
               >
                 <span>VIEW SELECTED WORK</span>
                 <IconArrow className="arrow" />
@@ -79,7 +79,7 @@ export function Hero() {
               <a
                 href="#contact"
                 onClick={(e) => onAnchor(e, "#contact")}
-                className="btn"
+                className="btn text-center justify-center"
               >
                 <span>WORK WITH ME</span>
                 <IconArrow className="arrow" />
@@ -87,7 +87,7 @@ export function Hero() {
             </div>
 
             {/* Downward explore indicator + technical metadata */}
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-6 border-t border-[#080808]/08 pt-6">
+            <div className="mt-8 flex items-center justify-between gap-4 border-t border-[#080808]/08 pt-6">
               <a
                 href="#work"
                 onClick={(e) => onAnchor(e, "#work")}
@@ -110,7 +110,7 @@ export function Hero() {
                 </span>
               </a>
 
-              <div className="flex items-center gap-4 text-xs font-mono text-[#8C8980]">
+              <div className="hidden sm:flex items-center gap-4 text-xs font-mono text-[#8C8980]">
                 <span>{heroMeta.format}</span>
                 <span className="h-2.5 w-px bg-[#080808]/15" />
                 <span>{heroMeta.frameRate}</span>

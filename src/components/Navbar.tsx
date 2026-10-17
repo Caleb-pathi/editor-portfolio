@@ -172,9 +172,9 @@ export function Navbar() {
             href="#contact"
             onClick={(e) => go(e, "#contact")}
             tabIndex={open ? 0 : -1}
-            className="btn w-full"
+            className="btn btn-acid w-full"
           >
-            <span>Let&apos;s work</span>
+            <span>Work With Me</span>
             <IconArrow className="arrow" />
           </a>
           <p className="type-meta mt-6 text-ash-dim">{identity.location}</p>

@@ -94,9 +94,8 @@ export const navLinks = [
 export const sections = [
   { id: "work", index: "01", label: "Selected Work" },
   { id: "services", index: "02", label: "What I Do" },
-  { id: "experience", index: "03", label: "Projects & Collaborations" },
-  { id: "testimonials", index: "04", label: "What People Say" },
-  { id: "contact", index: "05", label: "Contact" },
+  { id: "testimonials", index: "03", label: "What People Say" },
+  { id: "contact", index: "04", label: "Contact" },
 ] as const;
 
 /* ---------------------------------------------------------------------------
