@@ -21,13 +21,13 @@ export const images = {
 
   // Project thumbnails — REPLACE IMAGE URL HERE (one per project)
   project01:
-    "https://lh3.googleusercontent.com/d/191xk6PPQdCJzi9cQxxUiszzq_Zh_e9Fn=w1200",
+    "https://img.youtube.com/vi/wIz5i_Md8uM/maxresdefault.jpg",
   project02:
     "https://img.youtube.com/vi/Rdo8t3CA4F0/maxresdefault.jpg",
   project03:
-    "https://img.youtube.com/vi/wIz5i_Md8uM/maxresdefault.jpg",
+    "https://img.youtube.com/vi/MJWFEMCtv60/maxresdefault.jpg",
   project04:
-    "https://lh3.googleusercontent.com/d/1TbOi_FzxtQuhlHHtc_buuWWpwCT2fxoH=w1200",
+    "https://img.youtube.com/vi/ItNBCo7D3CU/maxresdefault.jpg",
   project05:
     "https://images.pexels.com/photos/6253568/pexels-photo-6253568.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   project06:
@@ -119,14 +119,14 @@ export type VideoProject = {
 export const videos: VideoProject[] = [
   {
     id: "01",
-    title: "Cinematic Visual Edit",
-    category: "Short Form & Motion",
+    title: "Cinematic Short Form",
+    category: "Short Form Editing",
     description:
-      "High-impact cinematic edit with rhythm-based cuts, immersive sound design, and custom visual pacing.",
-    duration: "01:49",
+      "Fast-paced storytelling, cinematic pacing, and visual rhythm designed for maximum retention.",
+    duration: "00:47",
     year: "2026",
     thumbnail: images.project01, // REPLACE IMAGE URL HERE
-    videoUrl: "https://drive.google.com/file/d/191xk6PPQdCJzi9cQxxUiszzq_Zh_e9Fn/preview", // REPLACE VIDEO URL HERE
+    videoUrl: "https://www.youtube.com/embed/wIz5i_Md8uM", // REPLACE VIDEO URL HERE
     aspect: "vertical",
   },
   {
@@ -143,14 +143,14 @@ export const videos: VideoProject[] = [
   },
   {
     id: "03",
-    title: "Cinematic Short Form",
-    category: "Short Form Editing",
+    title: "Cinematic Visual Edit",
+    category: "Short Form & Motion",
     description:
-      "Fast-paced storytelling, cinematic pacing, and visual rhythm designed for maximum retention.",
-    duration: "00:47",
+      "High-impact cinematic edit with rhythm-based cuts, immersive sound design, and custom visual pacing.",
+    duration: "01:49",
     year: "2026",
     thumbnail: images.project03, // REPLACE IMAGE URL HERE
-    videoUrl: "https://www.youtube.com/embed/wIz5i_Md8uM", // REPLACE VIDEO URL HERE
+    videoUrl: "https://www.youtube.com/embed/MJWFEMCtv60", // REPLACE VIDEO URL HERE
     aspect: "vertical",
   },
   {
@@ -162,7 +162,7 @@ export const videos: VideoProject[] = [
     duration: "00:07",
     year: "2026",
     thumbnail: images.project04, // REPLACE IMAGE URL HERE
-    videoUrl: "https://drive.google.com/file/d/1TbOi_FzxtQuhlHHtc_buuWWpwCT2fxoH/preview", // REPLACE VIDEO URL HERE
+    videoUrl: "https://www.youtube.com/embed/ItNBCo7D3CU", // REPLACE VIDEO URL HERE
     aspect: "vertical",
   },
   /* Placeholders 05 & 06 saved here to add back anytime on request:
