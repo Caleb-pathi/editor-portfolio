@@ -1,0 +1,412 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — custom palette, no default Tailwind colours
+   ============================================================ */
+@theme {
+  /* Base surfaces — Minimal editorial warm off-white */
+  --color-ink: #f5f4f1;
+  --color-ink-2: #ece9e2;
+  --color-ink-3: #e3dfd6;
+  --color-ink-4: #d8d4c9;
+
+  /* Text — Near-black primary and neutral gray secondary */
+  --color-bone: #080808;
+  --color-ash: #5a5852;
+  --color-ash-dim: #8c8980;
+
+  /* Vibrant orange-red accent */
+  --color-acid: #ff3d0a;
+  --color-acid-dim: #e03507;
+
+  /* Type families */
+  --font-display: "Plus Jakarta Sans", "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Instrument Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Motion */
+  --ease-cine: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-acid);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-acid);
+    outline-offset: 2px;
+  }
+
+  /* Refined, quiet scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f5f4f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d8d4c9;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b5b0a3;
+  }
+
+  /* Anchored sections clear the fixed nav */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+}
+
+/* ============================================================
+   COMPONENT PRIMITIVES
+   ============================================================ */
+@layer components {
+  /* Display type — oversized, bold, tight letter spacing editorial headline */
+  .type-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .type-display-wide {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .type-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+  }
+
+  /* Technical metadata — clean micro label */
+  .type-meta {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .type-meta {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Outlined display text — editorial device */
+  .type-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(8, 8, 8, 0.28);
+  }
+
+  /* Surface card / container */
+  .surface-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(8, 8, 8, 0.08);
+    box-shadow: 0 1px 3px rgba(8, 8, 8, 0.02);
+  }
+
+  /* Hairline rules */
+  .rule {
+    background: rgba(8, 8, 8, 0.09);
+    height: 1px;
+  }
+
+  /* Fine editorial grid, used sparingly */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        rgba(8, 8, 8, 0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(8, 8, 8, 0.03) 1px, transparent 1px);
+    background-size: 96px 96px;
+  }
+
+  /* Clean editorial image treatment */
+  .media-grade {
+    filter: contrast(1.02) saturate(1.02);
+  }
+
+  .media-grade-strong {
+    filter: contrast(1.04) saturate(1.02);
+  }
+
+  /* Buttons — simple, bold, rounded orange-red buttons with white text, or clean understated pill */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    border-radius: 9999px;
+    padding: 0.75rem 1.625rem;
+    background: transparent;
+    border: 1px solid rgba(8, 8, 8, 0.18);
+    color: var(--color-bone);
+    transition: all 0.3s var(--ease-cine);
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    border-color: var(--color-bone);
+    background: rgba(8, 8, 8, 0.05);
+    transform: translateY(-1px);
+  }
+
+  /* Solid vibrant orange-red CTA pill button */
+  .btn-acid {
+    background: var(--color-acid);
+    border-color: var(--color-acid);
+    color: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(255, 61, 10, 0.25);
+  }
+
+  .btn-acid:hover,
+  .btn-acid:focus-visible {
+    background: var(--color-acid-dim);
+    border-color: var(--color-acid-dim);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(255, 61, 10, 0.32);
+  }
+
+  /* Arrow that slides inside buttons & links */
+  .arrow {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.35s var(--ease-cine);
+  }
+  .btn:hover .arrow,
+  a:hover > .arrow,
+  button:hover > .arrow {
+    transform: translateX(3px);
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+  .shell {
+    width: 100%;
+    max-width: 96rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .shell {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell {
+      padding-inline: 3.5rem;
+    }
+  }
+  @media (min-width: 1440px) {
+    .shell {
+      padding-inline: 5rem;
+    }
+  }
+
+  .edge-x {
+    padding-inline: 1.25rem;
+  }
+
+  /* Scroll reveal — activated by .is-in via IntersectionObserver */
+  .reveal,
+  .reveal-x,
+  .reveal-scale {
+    transition-delay: var(--rd, 0ms);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    transition-property: opacity, transform;
+    transition-duration: 0.9s;
+    transition-timing-function: var(--ease-cine);
+    will-change: opacity, transform;
+  }
+  .reveal-x {
+    opacity: 0;
+    transform: translate3d(-18px, 0, 0);
+    transition-property: opacity, transform;
+    transition-duration: 0.9s;
+    transition-timing-function: var(--ease-cine);
+  }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(1.04);
+    transition-property: opacity, transform;
+    transition-duration: 1.1s;
+    transition-timing-function: var(--ease-cine);
+  }
+  .is-in.reveal,
+  .is-in.reveal-x,
+  .is-in.reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Underline reveal for nav links */
+  .link-line {
+    position: relative;
+  }
+  .link-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: var(--color-acid);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-cine);
+  }
+  .link-line:hover::after,
+  .link-line:focus-visible::after,
+  .link-line[data-active="true"]::after {
+    transform: scaleX(1);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .marquee-track {
+    animation: marquee 44s linear infinite;
+  }
+
+  .cursor-none-fine,
+  .cursor-none-fine * {
+    cursor: none !important;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Modal enter — runs on mount, no JS state machine needed */
+@keyframes modal-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.modal-overlay {
+  animation: modal-in 0.4s var(--ease-cine) both;
+}
+.modal-panel {
+  animation: modal-panel-in 0.55s var(--ease-cine) both;
+}
+
+@keyframes grain-shift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(-1.5%, 1%, 0);
+  }
+  40% {
+    transform: translate3d(1%, -1.5%, 0);
+  }
+  60% {
+    transform: translate3d(-1%, -1%, 0);
+  }
+  80% {
+    transform: translate3d(1.5%, 1.5%, 0);
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal,
+  .reveal-x,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
