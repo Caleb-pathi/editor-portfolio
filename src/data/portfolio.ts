@@ -291,7 +291,7 @@ export const collaborators: Collaborator[] = [
 
 /* REPLACE METRICS WITH REAL NUMBERS */
 export const metrics = [
-  { value: "30+", label: "Projects Edited" },
+  { value: "100+", label: "Projects Edited" },
   { value: "03", label: "Years Creating" },
 ];
 
